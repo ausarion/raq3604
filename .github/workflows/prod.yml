@@ -39,7 +39,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images:rja36004/rja36-flask
+          images: rja36004/rja36-flask
 
       - name: Build and push
         uses: docker/build-push-action@v2
