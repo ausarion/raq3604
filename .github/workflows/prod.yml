@@ -24,6 +24,7 @@ jobs:
         run: pytest -vv
 
   build-container:
+    permissions: read-all|write-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -39,7 +40,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: kaw393939/flaskbase
+          images:rja36004/rja36-flask
 
       - name: Build and push
         uses: docker/build-push-action@v2
