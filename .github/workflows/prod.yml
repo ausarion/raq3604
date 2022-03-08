@@ -24,7 +24,6 @@ jobs:
         run: pytest -vv
 
   build-container:
-    permissions: read-all|write-all
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
