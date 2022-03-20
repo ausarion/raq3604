@@ -2,3 +2,202 @@
 {% block content %}
     Page 2
 {% endblock %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+    {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+        <title>{% block title %}{% endblock %}This is {{ name }} Website</title>
+    {% endblock %}
+    <style>
+          body {
+              background-image: url("/img/download.png");
+              background-size: cover;
+
+          }
+
+          .paragraph1  {
+              font-size: 120%;
+              padding-top: 100px;
+              padding-left: 100px;
+
+          }
+
+          .paragraph2 {
+              font-size: 120%;
+              position: absolute;
+              padding-right: 100px;
+              top: 200px;
+              right: 10px;
+          }
+          .paragraph3 {
+              font-size: 120%;
+              position: relative;
+              padding-top: 400px;
+              padding-left: 100px;
+              top: 200px;
+              right: 10px;
+          }
+          .note {
+              font-size: 120%;
+          }
+
+      </style>
+
+
+
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <header class="mb-5">
+            <!-- As a link -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="/">My Site</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="page1.html">Page1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="page2.html">Page2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="page3.html">Page3</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="page4.html">Page4</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <section>
+        <div class="paragraph1">
+            <h1>What is Docker?</h1>
+            <br>
+            <p>Docker is a containerization technology. It is required as a core skill you need know for DevOps,</p>
+            <p>Programming, Security etc. Docker is a solution to servers, security patches, and dependencies</p>
+            <p>that leads to intermittent errors. Dockers containers is the results. With Docker, you can manage</p>
+            <p>your infrastructure in the same ways you manage your applications. It takes the application, OS, all</p>
+            <p>of its dependencies, configuration dependencies, and bundle all of this into an image.</p>
+            <p>In Docker the OS is what is call the kernel. The kernel is basically the glue that </p>
+            <p>connects the software to the hardware. Each application shares the memory of the OS.</p>
+            <br>
+            <p>Docker provides the ability to package and run an application in a loosely isolated environment called </p>
+            <p>a container. The isolation and security allows you to run many containers simultaneously on a given host. </p>
+            <p>Containers are lightweight and contain everything needed to run the application, so you do not need to rely
+            <p>on what is currently installed on the host. Containers are lightweight and contain everything needed to</p>
+            <p>run the application, so you do not need to rely on what is currently installed on the host.</p>
+        </div>
+        <div class="paragraph2">
+            <h1>What is a Docker registry?</h1>
+            <br>
+            <p>A Docker registry stores Docker images. Docker Hub is a public </p>
+            <p>registry that anyone can use, and Docker is configured to look for</p>
+            <P>images on Docker Hub by default. In Docker Hub is where you create a</p>
+            <p>new repository.</P>
+            <p>Here is my Docker Hub where I created three repositories.</p>
+            <img src="/img/dockerhub.PNG" height="200"  width="500" alt="">
+            <br>
+            <p>When you use the "docker pull" or "docker run" commands, the required images</p>
+            <p>are pulled from your configured registry. When you use the docker push command,</p>
+            <p>your image is pushed to your configured registry.</p>
+            <h1>What is a Docker container?</h1>
+            <br>
+            <p>A container is a runnable instance of an image. You can create, start, stop, move,</p>
+            <p>or delete  a container using the Docker API or CLI. You can connect a container </p>
+            <p>to one or more networks, attach storage to it, or even create a new image based on</p>
+            <p>its current state.</p>
+            <p>By default, a container is relatively well isolated from other containers and its host</p>
+            <p>machine. You can control how isolated a container’s network, storage, or other underlying</p>
+            <p>subsystems are from other containers or from the host machine.</p>
+            <p>A container is defined by its image as well as any configuration options you provide</p>
+            <p>to it when you create or start it. When a container is removed, any changes to its state</p>
+            <p>that are not stored in persistent storage disappear. A Dockerfile is a recipe for containers.</p>
+        </div>
+        <div class="paragraph3">
+            <h1>What are Docker commands</h1>
+            <h1>using the command prompt?</h1>
+            <br>
+            <P>Docker focuses on three phases of images.</P>
+            <ul>
+                <li>Build</li>
+                <li>Deploy</li>
+                <li>Run</li>
+            </ul>
+            <p>A Dockerfile is used to build the image, it is a file with a list of commands</p>
+            <p>that get sent to the Docker engine.</p>
+            <br>
+            <h1>How to build an image:</h1>
+            <ul>
+                <li>"docker build --tag name of image", builds the image.</li>
+                <li>"docker images", shows a list of images.</li>
+                <li>"docker ps", shows current running image.</li>
+                <li>Using the '-a' will show all images.</li>
+                <li>"docker start tag name or image name", will start the container. </li>
+                <li>"docker stop tag name or image name", will stop container.</li>
+                <li>"docker logs name of container", show what logs are running.</li>
+            </ul>
+            <h1>To run image:</h1>
+            <ul>
+                <li>"docker run name of image", <h1 class="note">note: If it doesn't run it because docker runs in isolation</h1>
+                <h1 class="note">from the rest of the system.</h1>
+                <h1 class="note">You have to map to a port to connect to a network.</h1></li>
+                <li>"docker run -d 'name of image' 8080:80"</li>
+                <p>Inside the container returns a sha container ID.</p>
+                <p>Now go to your browser and type localhost 8080:80 to see image of application.</p>
+            </ul>
+            <h1 class="note">To share image and push it out to Docker Hub:</h1>
+            <p>Go to Docker Hub and create an account.</p>
+            <p>Next, Create an repository by giving it a name (eg. xxxxx-xxxxx lowercase), then click create.</p>
+            <p>"docker tag 'mame' 'name of repo'"</p>
+            <p>"docker push 'name of repository'"</p>
+            <h1 class="To remove and pull image:"></h1>
+            <ul>
+                <li>"docker rm 'name of repo'"</li>
+                <li>"docker pull 'name of repo'"</li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        Environment: {{ deployment_environment }} - Copyright: {{ year }}
+        Message: {{ mymessage }} {{ format_price(100) }}
+    </footer>
+
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>
