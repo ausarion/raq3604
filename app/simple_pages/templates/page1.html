@@ -2,3 +2,175 @@
 {% block content %}
     Page 1
 {% endblock %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    {% block head %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+
+        <title>{% block title %}{% endblock %}This is {{ name }} Website</title>
+    {% endblock %}
+
+
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <header class="mb-5">
+            <!-- As a link -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="/">My Site</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="page1.html">Page1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="page2.html">Page2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="page3.html">Page3</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="page4.html">Page4</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+    <style>
+          body {
+              background-image: url("/img/Distributed-Version-Control-System.jpg");
+              background-size: cover;
+
+          }
+
+          .paragraph1  {
+              font-size: 120%;
+              padding-top: 135px;
+              padding-left: 100px;
+
+          }
+          .paragraph2 {
+              font-size: 120%;
+              position: absolute;
+              padding-left: 50px;
+              top: 125px;
+              right: 10px;
+
+              padding-top: 100px;
+              padding-left: 100px;
+              padding-right: 100px;
+          }
+          .paragraph3 {
+              font-size: 120%;
+              position: absolute;
+              padding-top: 890px;
+              padding-left: 100px;
+          }
+
+      </style>
+
+
+    <section>
+        <div class="paragraph1">
+            <h2>What is Git?</h2>
+            <p >Even though Git’s user interface is fairly similar to these other VCSs,</p>
+            <p>Git stores and thinks about information in a very different way, and</p>
+            <p>understanding these differences will help you avoid becoming confused while using it.</p>
+            <br>
+            <p>The major difference between Git and any other VCS (Subversion and friends included) is</p>
+            <p>the way Git thinks about its data. Conceptually, most other systems store information as</p>
+            <p>a list of file-based changes. These other systems (CVS, Subversion, Perforce, Bazaar, and</p>
+            <p>so on) think of the information they store as a set of files and the changes made to each</p>
+            <p>file over time (this is commonly described as delta-based version control).</p>
+        </div>
+        <br>
+
+        <div class="paragraph2">
+            <h1>What is Git branch?</h1>
+            <p>Git branch distinctly sets Git apart from other VCSs community.</p>
+            <p>First you must understand that git stores data by a series of snapshots.</p>
+            <p>A branch in Git is simply a lightweight movable pointer to one of these commits.</p>
+            <p>The default branch name in Git is master. As you start making commits, you’re given</p>
+            <p>a master branch that points to the last commit you made. Every time you commit, the </P>
+            <P>master branch pointer moves forward automatically.</p>
+            <br>
+            <p>To understand branch in Git begins with files that are modified and staged in your local repository.</p>
+            <p>You must first initialize your local repository by typing "git init"</p>
+            <p>This sets up the local repository for files to be added.</p>
+            <p>The files are then staged to be added to your remote repository by typing the "git add ." command.</p>
+            <p>By typing "git status" will show the files that have been modified and staged for commit</p>
+            <p>in red text in your command prompt.</p>
+            <p>The files are now ready to be committed by typing "git commit -m "write a short message"</p>
+            <p>It is good practice to always type "git status " after each command to see the status.</p>
+            <P>If there are no errors which all files will appear in green text to then be pushed to a branch.</P>
+            <br>
+        </div>
+    </section>
+     <div class="paragraph3">
+         <h1>Creating a New Branch</h1>
+         <p>The “master” branch in Git is not a special branch. It is exactly like any other branch.</p>
+         <p>The only reason nearly every repository has one is that the git init command creates it by</p>
+         <p>default and most people don’t bother to change it.</p>
+         <p>To create a new branch you must type "git branch 'name of branch'"</p>
+         <p>As mentioned earlier branches are lightweight movable pointers to commits made.</p>
+         <p>Branches are for developers after files have been modified and share those files by pushing</p></p>
+         <p>them to a Github remote repository.</p>
+         <br>
+         <p>The "master" branch can be use for production of your app project</p>
+         <p>and the other branches created can be for development and testing purposes.</p>
+         <br>
+         <h1>What is Git merge?</h1>
+         <br>
+         <p>Git merge joins two or more developement histories together when files have been modified since the</p>
+         <p>since the last changes.</p>
+         <p>Incorporates changes are made by commits since the last time their histories diverged from the current</p>
+         <p>branch into current branch. The "git pull" command is used to integrate changes from another repository</p>
+         <p>or branch into another branch.</p>
+         <br>
+         <h1>What is "git tag"?</h1>
+         <p>You can create, list, delete, or verify a tag object with GPG.</p>
+         <p>Tagging in Git or any other VCS, refers to a process of marking specific point in history for a repository</p>
+         <p>containing a project. Basically, a reference point, a GPG sign tag object is created that will verify the user.</p>
+         <p></p>
+     </div>
+    <footer>
+        Environment: {{ deployment_environment }} - Copyright: {{ year }}
+        Message: {{ mymessage }} {{ format_price(100) }}
+    </footer>
+
+
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>
