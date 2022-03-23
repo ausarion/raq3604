@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
     Page 4
-{% endblock %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,54 +11,111 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    {% block head %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
 
-        <title>{% block title %}{% endblock %}This is {{ name }} Website</title>
-    {% endblock %}
 
 </head>
+       <style>
+
+           body {
+              background-color: darkgray;
+              background-size: cover;
+          }
+           .paragraph1 {
+               font-size: 120%;
+               right: 100px;
+           }
+           .paragraph2 {
+               font-size: 120%;
+
+           }
+           .paragraph3 {
+               font-size: 120%;
+
+           }
+           .paragraph4 {
+               font-size: 120%;
+           }
+
+
+      </style>
 <body>
-<div class="container-fluid">
-    <div class="row">
-        <header class="mb-5">
-            <!-- As a link -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container">
-                    <a class="navbar-brand" href="/">My Site</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="about.html">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="page1.html">Page1</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="page2.html">Page2</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="page3.html">Page3</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="page4.html">Page4</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
+<div class="paragraph1">
+    <h1>What is Continuous Integration?</h1>
+    <p>Continuous Integration is a software development practice where members of team integrate</p>
+    <p>their work frequently, usually each person integrates at least daily - leading to </p>
+    <p>multiple integrations per day. Each integration is verified by an automated build</p>
+    <p>(including test) to detect integration errors as quickly as possible. Many teams find that</p>
+    <p>this approach leads to significantly reduced integration problems and allows a team to</p>
+    <p>develop cohesive software more rapidly.</p>
+</div>
+<div class="paragraph1">
+    <h1>What is Continuous Delivery?</h1>
+    <p>Continuous Delivery is a software development discipline where you build software in</p>
+    <p>such a way that the software can be released to production at any time.</p>
+    <p>You achieve continuous delivery by continuously integrating the software done by the</p>
+    <p>development team, building executables, and running automated tests on those</p>
+    <p>executables to detect problems. Furthermore, you push the executables into</p>
+    <p>increasingly production-like environments to ensure the software will work in</p>
+    <p>production. To do this you use a DeploymentPipeline.</p>
+    <br>
+    <p>To achieve continuous delivery you need:</p>
+    <ul>
+        <li>a close, collaborative working relationship between everyone involved in delivery (often referred to as a DevOpsCulture[2]).</li>
+        <br>
+        <li>extensive automation of all possible parts of the delivery process, usually using a DeploymentPipeline</li>
+    </ul>
+    <p>Continuous Delivery is sometimes confused with Continuous Deployment. Continuous</p>
+    <p>Deployment means that every change goes through the pipeline and automatically gets</p>
+    <p>put into production, resulting in many production deployments every day. Continuous</p>
+    <p>Delivery just means that you are able to do frequent deployments but may choose not</p>
+    <p>to do it, usually due to businesses preferring a slower rate of deployment. In order to</p>
+    <p>do Continuous Deployment you must be doing Continuous Delivery.</p>
+    <br>
+    <p>Create pull requests (PRs) to change, review, and merge code in a Git repository.</p>
+    <p>Your team can review the PRs and give feedback on changes. Reviewers can step</p>
+    <p>through the proposed changes, leave comments, and vote to approve or reject the PRs.</p>
+    <p>Depending on branch policies and other requirements, your PR might need to meet various</p>
+    <p>criteria before you can complete the PR and merge the changes into the target branch.</p>
+    <br>
+    <p>Everytime a Pull request is made to merge code onto the main branch for production, it </p>
+    <p>triggers workflows, a unit test is ran first to test code for errors. If there are no errors</p>
+    <p> it builds the image and push it to Dockerhub. Lastly, it deploys the app to Heroku.</p>
+
+</p>
+</div>
+<div class="paragraph2">
+    <h1>How to set up project to use Github Actions?</h1>
+    <br>
+    <p>To apply Github Actions you first have to go your project folder in your Pycharm editor.</p>
+    <ol>
+        <li>In the .github directory there is a workflows folder with three files: dev.yml, heroku_awake.yml, and prod.yml.</li>
+        <li>In the dev.yml file you are going to edit where it says heroku_app_name: "type the name of your heroku app name" </li>
+        <li>Below that line is heroku_email: "type your email address"</li>
+        <li>In the heroku_awake.yml file in the jobs block of code the last line is says type the url of your heroku development app.</li>
+        <li>and in the next block of where it says "keep_dev_awake" type the same thing your url heroku development app</li>
+        <li>In the prod.yml you will do the same for dev.yml file type your heroku production app name and email.</li>
+    </ol>
+    <div class="paragraph3">
+        <p>If you look at the prod.yml file you will see on push to master branch when a push is done.</p>
+        <p>It will cause the jobs to work. One job is to run the test, one is to build the container to push to Dockerhub,</p>
+        <p>the other is to deploy the program to Heroku. When one of these events happen, push or pull, this trigger the rest</p>
+        <p>action to work.</p>
     </div>
+    <div class="paragraph4">
+        <p>Next, go to Github click on the setting tab.</p>
+        <p>When setting open you will see a list under General, scroll down until you see "Secrets"</p>
+        <p>Click on Secrets, a dropdown menu opens and you will see Actions, click on it. Actions secrets</p>
+        <p>opens up. To the right there is a button to create a New Repository secret.</p>
+        <p>You will create three repository secrets, one for DOCKER_USERNAME, DOCKER_PASSWORD, and HEROKU_API_KEY.</p>
+        <p>To generate a API_KEy you have to go to Heroku.com create an account. After creating an account login and go</p>
+        <p>click on account setting, then you will see Application tab. To create API token click the Create authorization</p>
+        <p>to generate a authorization token. This token is the value for the Heroku_API_KEY in the Github Actions</p>
+        <p>where you created your Docker username and Docker password.</p>
+        <p></p>
+    </div>
+</div>
+
     <footer>
-        Environment: {{ deployment_environment }} - Copyright: {{ year }}
-        Message: {{ mymessage }} {{ format_price(100) }}
     </footer>
 
 </div>
@@ -73,3 +129,4 @@
 
 </body>
 </html>
+{% endblock %}
